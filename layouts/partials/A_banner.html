@@ -18,6 +18,21 @@
         .button-group a:last-child {
             margin-right: 0; /* Remove margin for the last button */
         }
+                /* Media query for smaller screens */
+                @media screen and (max-width: 600px) {
+            .button-group {
+                flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+                justify-content: flex-start; /* Align buttons to the left */
+            }
+
+            .button-group a {
+                margin-right: 5px; /* Reduce margin between buttons */
+                margin-bottom: 5px; /* Add vertical margin */
+                /* Adjust button size */
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
