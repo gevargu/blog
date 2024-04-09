@@ -7,7 +7,6 @@
         /* Your CSS styles */
         .button-group {
             display: flex;
-            overflow-x: auto; /* Enable horizontal scrolling */
             justify-content: center; /* Align buttons horizontally at the center */
         }
 
@@ -18,12 +17,12 @@
         .button-group a:last-child {
             margin-right: 0; /* Remove margin for the last button */
         }
-        
+
         /* Media query for smaller screens */
         @media screen and (max-width: 600px) {
             .button-group {
                 flex-wrap: wrap; /* Allow buttons to wrap to the next line */
-                justify-content: center; /* Align buttons to the left */
+                justify-content: center; /* Align buttons to the center */
             }
 
             .button-group a {
@@ -34,15 +33,20 @@
                 font-size: 14px;
             }
         }
-        
-        /* Media query to hide horizontal scrollbar on larger screens */
+
+        /* Media query to prevent horizontal overflow on larger screens */
         @media screen and (min-width: 601px) {
             .button-group {
-                overflow-x: hidden; /* Hide horizontal scrollbar */
+                overflow-x: auto; /* Enable horizontal scrolling if necessary */
+            }
+
+            .button-group::-webkit-scrollbar {
+                display: none; /* Hide scrollbar */
             }
 
             .button-group a {
-                margin: 0; /* Reset margin for buttons */
+                white-space: nowrap; /* Prevent buttons from wrapping */
+                margin: 0 10px; /* Add horizontal margin */
             }
         }
     </style>
