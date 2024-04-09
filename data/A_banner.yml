@@ -1,0 +1,27 @@
+title: |
+  Forest Ecophysiology Lab
+
+subtitle: |
+  <p style="font-size:24px;">
+  Our work focuses on improving the ways we predict plant responses to climate change and our understanding of environmental stress physiology.
+  </p>
+content: |
+  <p style="font-size: 18px;">
+    We are based in the departments of <a target="_blank" href="https://bpp.oregonstate.edu/">Botany & Plant Pathology</a>, and <a target="_blank" href="https://fes.forestry.oregonstate.edu/">Forest Ecosystems & Society</a> 
+    at <a target="_blank" href="https://oregonstate.edu">Oregon State University</a>.
+  </p>
+buttons:
+  - label: "Research"
+    link: "#first"
+  - label: "Publications"
+    link: "#publications"
+  - label: "Philosophy"
+    link: "#phi"
+  - label: "People"
+    link: "#people"
+  - label: "Outreach"
+    link: "#out"
+  - label: "Join"
+    link: "#app"
+style: "style5 invert color1 content-align-center fullscreen onload-image-fade-in onscroll-content-fade-up"
+image: "images/banner.jpg"

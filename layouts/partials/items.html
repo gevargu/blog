@@ -1,0 +1,12 @@
+<!-- Items -->
+<section class="wrapper style1 align-left" id="people">
+    <div class="inner">
+        {{ with .title }}<h1>{{ . }}</h1>{{ end }}
+        <!-- {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }} -->
+        <div class="items {{ .style }}">
+            {{ range .items }}
+                {{ partial "item" . }}
+            {{ end }}
+        </div>
+    </div>
+</section>

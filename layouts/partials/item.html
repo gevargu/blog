@@ -1,0 +1,12 @@
+<section>
+    <div class="member-photo">
+        <figure class="image-fit">
+            <img src="{{ .photo }}" alt="{{ .name }}" style="width: 300px; height: auto;">
+        </figure>
+    </div>
+    <h3>{{ .name }}</h3>
+    <p style="margin-bottom: 5px;">{{ .title }}</p>
+    <p style="margin-bottom: 5px;">{{ .content }}</p>
+    <p style="margin-bottom: 5px;">{{ .keywords }}</p>
+    <p style="margin-bottom: 5px;"><a href="mailto:{{ .email }}">{{ .email }}</a></p>
+</section>

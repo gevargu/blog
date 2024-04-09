@@ -1,0 +1,47 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Banner with Buttons</title>
+    <style>
+        /* Your CSS styles */
+        .button-group {
+            display: flex;
+            justify-content: center; /* Align buttons horizontally at the center */
+        }
+
+        .button-group a {
+            margin-right: 10px; /* Adjust as needed */
+        }
+
+        .button-group a:last-child {
+            margin-right: 0; /* Remove margin for the last button */
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Banner Section Template -->
+<section class="banner {{ .style }}">
+    <div class="content">
+        {{ with .title }}<h1>{{ . }}</h1>{{ end }}
+        {{ with .subtitle }}<p class="major" style="font-size:x-large">{{ . | safeHTML }}</p>{{ end }}
+        {{ with .content }}<p class="major" style="font-size:x-large">{{ . | safeHTML }}</p>{{ end }}
+        {{ with .buttons }}
+            <div class="button-group">
+                {{ range . }}
+                    <a href="{{ .link }}" class="button primary large wide smooth-scroll-middle">{{ .label }}</a>
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+    {{ with .image }}<div class="image">
+        <img src="{{.}}" alt="Banner Image" />
+    </div>{{end}}
+</section>
+
+<!-- Include your JavaScript here if needed -->
+
+</body>
+

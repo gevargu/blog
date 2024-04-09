@@ -1,0 +1,21 @@
+title: "Meet the team"
+#content: |
+#  This is an <strong>Items</strong> element, and it's basically just a grid for organizing items of various types. You can customize its <span class="demo-controls">appearance with a number of modifiers</span>, as well as assign it an optional <code>onload</code> or <code>onscroll</code> transition modifier (<a href="#reference-items">details</a>).
+style: "style1 big onscroll-fade-in"
+id: "people"
+items:
+  # feature item loop
+  - name: "German Vargas Gutiérrez"
+    title: "Assistant Professor"
+    content: "I am a plant ecophysiologist interested in understanding how plants and ecosystems respond to climate change."
+    keywords: "Tropical Ecology | Ecophysiology | Ecological Forecasting | Legumes "
+    email: "vargasgg@oregonstate.edu"
+    photo: "/images/people/01_vargas.jpg"
+
+ # Add more lab members as needed
+  - name: ""
+    title: ""
+    content: ""
+    keywords:
+    email: ""
+    photo: ""
