@@ -3,7 +3,32 @@
 ## -----------------------------------------------
 
 title = "Forest Ecophysiology"
+languageCode = "en-us"
 copyright = "2024"
+
+# Define the content directory
+contentDir = "content"
+
+# Define the layout directory
+layoutDir = "layouts"
+
+# Define the data directory
+dataDir = "data"
+
+# Define the static files directory
+staticDir = "static"
+
+# Define the output directory
+publishDir = "public"
+
+# Enable sections to create separate pages
+[permalinks]
+  posts = "/:year/:month/:title/"
+  # Add more sections as needed
+
+[outputFormats]
+  [outputFormats.HTML]
+    baseName = "index"
 
 ## -----------------------------------------------
 ## Publish
