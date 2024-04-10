@@ -41,10 +41,6 @@ relativeURLs = "true"
 baseURL = "https://gevargu.github.io/"
 publishDir = "public"
 
-# Remote
-#baseURL = "https://caressofsteel.github.io/demos/hugo/hugo-story/"
-#publishDir = "//centos/sites/hugodev/hugostory/"
-
 ## -----------------------------------------------
 ## Hugo Built-in Features
 ## -----------------------------------------------
@@ -58,11 +54,12 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
 [Params]
   description = "Studying plant ecophysiology at OSU"
-  logo = "blog/public/leaf_logo.png"
+  logo = "./leaf_logo.png"
   favicon = true
 
 [Params.social]
   github = "https://github.com/gevargu/"
+  twitter = "https://twitter.com/tropicalecophys"
   email = "vargasgg@oregonstate.edu"
 
 [Params.asset]
