@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications</title>
+</head>
+
+<body>
+    <!-- Publications sections-->
+    <section class="wrapper style1 align-left" id="publications">
+        <figure class="image-fit">
+            <img src="{{ .image }}" alt="{{ .title }}" style="max-width: 1700px; height: 515px;">
+        </figure>
+        <div class="inner" style="margin-top: 0; padding-top: 0;">
+            <h1>{{ .title }}</h1>
+            <h3>{{ .subtitle | safeHTML}}</h3>
+            <ol>
+                {{ range .publications }}
+                <li>{{ .author | safeHTML }} {{ .year }}. <strong>{{ .title }}</strong>. <a href="{{ .link }}">{{ .journal }}</a></li>
+                {{ end }}
+            </ol>
+            <ul class="actions stacked">
+                <li><a href="#" class="button">Home</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
