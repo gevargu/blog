@@ -1,0 +1,10 @@
+####################### Spotlight #########################
+style: "style1 invert color3 orient-left content-align-left image-position-center onscroll-image-fade-in"
+id: "last"
+title : "Tropical leaf habit physiology"
+content: |
+  
+button: 
+  label: "Learn more"
+  link: "#"
+image: "images/deciduousforest.jpg"

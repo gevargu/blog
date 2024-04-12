@@ -17,5 +17,5 @@ buttons:
     link: "content/pages/publications.html"
   - label: "Philosophy"
     link: "/pages/philosophy.html"
-style: "style5 invert color1 content-align-center fullscreen onload-image-fade-in onscroll-content-fade-up"
+style: "style5 invert color4 content-align-center fullscreen onload-image-fade-in onscroll-content-fade-up"
 image: "images/banner.jpg"
