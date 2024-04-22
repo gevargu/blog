@@ -60,32 +60,29 @@
             </div>
         </section>
         <!-- Footer -->
-<footer class="wrapper style1 color invert align-left">
-    <div class="inner">
-        <!-- Your name, address, and email -->
-        <p>
-            German Vargas Gutiérrez, Ph.D.<br>
-            Department of Botany & Plant Pathology and Department of Forest Ecosystems & Society,<br>
-            Oregon State University, Corvallis, OR 97331-8646<br>
-            Email: <a href="mailto:vargasgg@oregonstate.edu">vargasgg@oregonstate.edu</a>
-        </p>
-        <!-- End of your name, address, and email -->
-        
-        <!-- Icons -->
-        <ul class="icons">
-            {{ with .Site.Params.social.github }}<li><a target="_blank" href="{{.}}" class="icon brands style2 fa-github"><span class="label">Github</span></a></li>{{end}}
-            {{ with .Site.Params.social.twitter }}<li><a target="_blank" href="{{.}}" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>{{end}}
-        </ul>
-        <!-- Theme and attribution -->
-        <p>Hugo website theme: Story &copy; 2020 <a target="_blank" href="https://github.com/caressofsteel/">CaressOfSteel</a><span class="footerspacer icon fa-diamond"></span>
-            Ported from <a target="_blank" href="https://html5up.net/uploads/demos/story/">Story</a> by HTML5UP<span class="footerspacer icon fa-diamond"></span>
-        <!-- End of theme and attribution -->
-</div>
-</footer>
-
-<!-- FontAwesome JS -->
-{{ range .Site.Params.asset.fontawesome_js -}}
-    <script type="text/javascript" src="{{ . | absURL }}"></script>
-{{- end }}
-    </body>
+        <footer class="wrapper style1 color invert align-left">
+            <div class="inner">
+                
+                <p>
+                    German Vargas Gutiérrez, Ph.D.<br>
+                    Department of Botany & Plant Pathology and Department of Forest Ecosystems & Society,<br>
+                    Oregon State University, Corvallis, OR 97331-8646<br>
+                    Email: <a href="mailto:vargasgg@oregonstate.edu">vargasgg@oregonstate.edu</a>
+                </p>
+                
+                
+                
+                <ul class="icons">
+                    <li><a target="_blank" href="https://github.com/gevargu/" class="icon brands style2 fa-github"><span class="label">Github</span></a></li>
+                    <li><a target="_blank" href="https://twitter.com/tropicalecophys" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                </ul>
+                
+                <p>Hugo website theme: Story &copy; 2020 <a target="_blank" href="https://github.com/caressofsteel/">CaressOfSteel</a><span class="footerspacer icon fa-diamond"></span>
+                    Ported from <a target="_blank" href="https://html5up.net/uploads/demos/story/">Story</a> by HTML5UP<span class="footerspacer icon fa-diamond"></span>
+                
+        </div>
+        </footer>
+    <script type="text/javascript" src="./js/fontawesome-all.min.js"></script>
+        </div>
+    <script src='./js/bundle.min.js'></script>
 </html>
