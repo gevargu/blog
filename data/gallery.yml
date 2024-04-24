@@ -3,15 +3,10 @@ style: "style2 medium lightbox onscroll-fade-in"
 content: |
   We work across systems exploring the factors mediating water use, drought tolerance, and community physiological diversity.
 pictures:
-  - title: "Santa Rosa National Park"
-    content: "Largest continuous of tropical dry forest in the Central American Dry Corridor. Part of our long-term ecological monitoring project."
+  - title: "Mesoamerican Tropical Dry Forests"
+    content: "We work in Costa Rica in the largest continuous of tropical dry forest in the Central American Dry Corridor. Part of our long-term ecological monitoring project that takes place in Santa Rosa and Palo Verde national parks."
     image: "images/gallery/fulls/01_SantaRosa.jpg"
     thumb: "images/gallery/thumbs/01_SantaRosa.jpg"
-
-  - title: "Palo Verde National Park"
-    content: "Tropical dry forest in alluvial soils and karst formations. Part of our long-term ecological monitoring project."
-    image: "images/gallery/fulls/02_PaloVerde.jpg"
-    thumb: "images/gallery/thumbs/02_PaloVerde.jpg"
 
   - title: "Puerto Rico & U.S. Virgin Islands"
     content: "We collaborate with the International Institute of Tropical Forestry and USDA Forest Service to leverage Forest Inventory Analysis data."
