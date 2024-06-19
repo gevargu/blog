@@ -1,6 +1,6 @@
 ####################### Spotlight #########################
 style: "style1 invert color3 orient-left content-align-left image-position-center onscroll-image-fade-in"
-id: "last"
+id: "none"
 title : "Tropical leaf habit physiology"
 content: |
   

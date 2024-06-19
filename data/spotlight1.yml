@@ -1,6 +1,6 @@
 ####################### Spotlight #########################
 style: "style1 color7 invert orient-right content-align-left image-position-center onscroll-image-fade-in"
-id: "first"
+id: "none"
 title : "Forest resilience to abiotic stress and disturbances"
 content: |
   

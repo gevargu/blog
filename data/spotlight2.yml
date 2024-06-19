@@ -1,6 +1,6 @@
 ####################### Spotlight #########################
 style: "style1 color5 invert orient-left content-align-left image-position-center onscroll-image-fade-in"
-id: "second"
+id: "none"
 title : "Plant physiological variation"
 content: |
   
