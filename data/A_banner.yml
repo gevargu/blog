@@ -16,5 +16,5 @@ buttons:
   - label: "People"
     link: "./people.html"
 
-style: "style5 invert color4 content-align-center fullscreen onload-image-fade-in onscroll-content-fade-up"
+style: "style5 invert color4 content-align-center fullscreen onscroll-content-fade-up"
 image: "images/banner.jpg"
