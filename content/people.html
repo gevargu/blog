@@ -20,12 +20,21 @@
         <noscript><link rel="stylesheet" href="./css/noscript.min.css" /></noscript>
         
         <link rel="stylesheet" href= "./css/fontawesome-all.min.css" >
-
+        <!-- Local override for the Alumni list font size -->
+        <style>
+        /* Increase font size for the Alumni list only */
+        #people h2 + ul.alumni-list {
+            font-size: 1.25rem;
+            line-height: 1.45;
+        }
+        #people h2 + ul.alumni-list li {
+            margin-bottom: 0.35rem;
+        }
+        </style>
     </head>
 
-<!-- People -->
     <body>
-        <!-- Current lab members -->
+        <!-- People section -->
         <section class="wrapper style2 align-left" id="people">
             <div class="inner">
                 <h1>Meet the team</h1>
@@ -64,18 +73,30 @@
                         <p style="margin-bottom: 5px;">PhD Student</p>
                         <p style="margin-bottom: 5px;">I am a Colombian ecophysiologist interested in understanding how plants from different ecosystems respond to abiotic stress.</p>
                         <p style="margin-bottom: 5px;">Plant physiology | Climate change | Ecology | Evolution </p>
-                        <p style="margin-bottom: 5px;"><a href="mailto:rojasjus@oregonstate.edu">rojasjus@oregonstate.edu</a></p>
+                        <p style="margin-bottom: 5px;"><a href="mailto:"></a></p>
                     </section>
                     <section>
                         <div class="member-photo">
                             <figure class="image-fit">
-                                <img src="./images/people/02_pannikat.jpg" alt="" style="width: 300px; height: 300px;">
+                                <img src="./images/people/07_sotelo.jpeg" alt="" style="width: 300px; height: 300px;">
                             </figure>
                         </div>
-                        <h3>Colin Pannikkat</h3>
-                        <p style="margin-bottom: 5px;">Undergraduate Student</p>
-                        <p style="margin-bottom: 5px;">I am a third-year Computer Science student with minors in Math and Economics, passionate about using my computational and analytical skills to address environmental challenges and foster sustainable, data-driven solutions.</p>
-                        <p style="margin-bottom: 5px;">Data-Driven Solutions | Environmental Sustainability | Modeling | Artificial Intelligence</p>
+                        <h3>Haley Sotelo</h3>
+                        <p style="margin-bottom: 5px;">MSc Student</p>
+                        <p style="margin-bottom: 5px;">I am studying forest pathology and ecophysiology. I am interested in drought tolerance and pathogen susceptibility, and the broader implications of these interactions within the context of climate change and ecosystem resilience.</p>
+                        <p style="margin-bottom: 5px;">Ecophysiology | Forest Pathology | Ecology | Environmental Science</p>
+                        <p style="margin-bottom: 5px;"><a href="mailto:"></a></p>
+                    </section>
+                    <section>
+                        <div class="member-photo">
+                            <figure class="image-fit">
+                                <img src="./images/people/08_delacruz.jpeg" alt="" style="width: 300px; height: 300px;">
+                            </figure>
+                        </div>
+                        <h3>Maddie DelaCruz</h3>
+                        <p style="margin-bottom: 5px;">MSc Student</p>
+                        <p style="margin-bottom: 5px;">I am studying forest ecophysiology and am interested in investigating the relationships among water use, physiology, climate, and anthropogenic changes in different ecosystems.</p>
+                        <p style="margin-bottom: 5px;">Forest Ecology | Ecophysiology | Plant-Water Relations</p>
                         <p style="margin-bottom: 5px;"><a href="mailto:"></a></p>
                     </section>
                     <section>
@@ -115,21 +136,20 @@
                         <p style="margin-bottom: 5px;"><a href="mailto:"></a></p>
                     </section>
                 </div>
+                <!-- Alumni -->
+                <h2>Alumni</h2>
+                <ul class="alumni-list">
+                    <li>Colin Pannikkat -  Undergraduate research assistant in ecophysiological modeling, 2024 - 2026 </li>
+                    <li>BSc. José D. Vargas-Murillo -  Dry forest ecophysiology intern, 2025 </li>
+                    <li>MSc. M. Afsal Athanikkal -  Branching borders intern, 2025 </li>
+                </ul>
+                <!-- Back to home button -->
                 <ul class="actions stacked">
                     <li><a href="./index.html" class="button">Home</a></li>
                 </ul>
             </div>
         </section>
-        
-        <!-- Alumni -->
-        <section class="wrapper style1 align-left">
-            <div class="inner">
-                <h2>Alumni</h2>
-                <ul>
-                    <li><strong>MSc. M. Afsal Athanikkal</strong> -  Branching Borders Intern - 2025 </li>
-                </ul>
-            </div>
-        </section>
+
         <!-- Footer -->
         <footer class="wrapper style1 color invert align-left">
             <div class="inner">
@@ -140,9 +160,7 @@
                     Oregon State University, Corvallis, OR 97331-8646<br>
                     Email: <a href="mailto:vargasgg@oregonstate.edu">vargasgg@oregonstate.edu</a>
                 </p>
-                
-                
-                
+                 
                 <ul class="icons">
                     <li><a target="_blank" href="https://github.com/gevargu/" class="icon brands style2 fa-github"><span class="label">Github</span></a></li>
                 </ul>
