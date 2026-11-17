@@ -1,0 +1,45 @@
+{{ define "main" }}
+{{ $d := site.Data.people }}
+<style>
+    /* Larger font for the Alumni list */
+    #people h2 + ul.alumni-list { font-size: 1.25rem; line-height: 1.45; }
+    #people h2 + ul.alumni-list li { margin-bottom: 0.35rem; }
+</style>
+
+<!-- People section (content: data/people.yml) -->
+<section class="wrapper style2 align-left" id="people">
+    <div class="inner">
+        <h1>{{ $d.title }}</h1>
+        <div class="items style1 medium">
+            {{ range $d.members }}
+            <section>
+                <div class="member-photo">
+                    <figure class="image-fit">
+                        <img src="{{ printf "images/people/%s" .photo | relURL }}" alt="{{ .name }}" style="width: 300px; height: {{ .photo_height | default "300px" }};">
+                    </figure>
+                </div>
+                <h3>{{ .name }}</h3>
+                {{ with .role }}<p style="margin-bottom: 5px;">{{ . }}</p>{{ end }}
+                {{ with .bio }}<p style="margin-bottom: 5px;">{{ . | markdownify }}</p>{{ end }}
+                {{ with .interests }}<p style="margin-bottom: 5px;">{{ . }}</p>{{ end }}
+                {{ with .email }}<p style="margin-bottom: 5px;"><a href="mailto:{{ . }}">{{ . }}</a></p>{{ end }}
+            </section>
+            {{ end }}
+        </div>
+
+        {{ with $d.alumni }}
+        <h2>Alumni</h2>
+        <ul class="alumni-list">
+            {{ range . }}<li>{{ . | markdownify }}</li>
+            {{ end }}
+        </ul>
+        {{ end }}
+
+        <ul class="actions stacked">
+            <li><a href="{{ "index.html" | relURL }}" class="button">Home</a></li>
+        </ul>
+    </div>
+</section>
+
+{{ partial "footer" . }}
+{{ end }}

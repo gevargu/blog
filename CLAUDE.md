@@ -1,0 +1,32 @@
+# Forest Ecophysiology Lab website
+
+Hugo site (theme: `hugo-story`, customized) published at https://forestecophys.com via GitHub Pages.
+
+## Repos
+- This folder = source repo `gevargu/blog`.
+- `public/` = build output, its own git repo `gevargu/gevargu.github.io` (what GitHub Pages serves).
+- Lives in `~/Documents/GithubRepos/blog` on purpose. The old copy in Dropbox
+  (`Dropbox/Forest_Ecophysiology_lab/website/blog`) is retired: Dropbox sync corrupted its git repos. Don't use it or move this repo into a synced folder (Dropbox, Box, iCloud).
+
+## Where to edit
+| What | File(s) |
+|---|---|
+| Home page banner, title, buttons | `data/A_banner.yml` |
+| Home page sections | `data/research_header.yml`, `data/spotlight*.yml`, `data/gallery.yml` (order set in `layouts/index.html`) |
+| People / Join us / Publications pages | `data/people.yml`, `data/joinus.yml`, `data/publications.yml` (templates: `layouts/_default/{people,joinus,publications}.html`; `content/*.md` are front-matter stubs that set the layout and URL) |
+| Hydraulic traits page (unlinked placeholder) | `static/hydraulictraits.html` (standalone HTML, copied as-is) |
+| Images, PDFs | `static/images/...`, `static/pdfs/...` |
+| Templates | `layouts/` (overrides `themes/hugo-story/layouts/`) |
+
+**Never edit files in `public/`**: they are regenerated on every build and manual edits get overwritten.
+`static/CNAME` holds the custom domain; keep it.
+
+## Build & publish
+- Hugo version: **0.147.3 extended** (installed at `~/.local/bin/hugo`; the live site was built with it). Older versions fail: the layouts use `hugo.IsServer` (needs ≥0.120). Much newer versions may break the theme and the front-matter-less HTML pages in `content/`. Check with `hugo version`.
+- Preview: `./publish.sh --preview` → http://localhost:1313
+- Publish: `./publish.sh "commit message"` (runs `hugo --gc`, then commits and pushes `public/`).
+- `publish.sh` only pushes the built site. Commit and push source changes in this repo separately.
+
+## Notes
+- `themes/hugo-story` is tracked as normal files (not a submodule).
+- `publicold/` is an old build kept for reference; ignore it.

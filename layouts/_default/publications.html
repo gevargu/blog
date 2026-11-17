@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ $d := site.Data.publications }}
+
+<!-- Publications section (content: data/publications.yml) -->
+<section class="wrapper style1 align-left" id="publications">
+    <figure class="image-fit">
+        <img src="{{ $d.image | relURL }}" alt="{{ $d.title }}" style="max-width: 100%; max-height: 815px;">
+    </figure>
+    <div class="inner" style="margin-top: 0; padding-top: 0;">
+        <h1>{{ $d.title }}</h1>
+        {{ with $d.scholar_link }}<h3>For a complete list, please visit <a href="{{ . }}"><strong>here</strong></a>.</h3>{{ end }}
+        <ol>
+            {{ range $d.publications }}
+            <li>{{ .authors | safeHTML }} ({{ .year }}). <strong>{{ .title }}</strong>. <a href="{{ .link }}">{{ .journal | safeHTML }}</a></li>
+            {{ end }}
+        </ol>
+        <ul class="actions stacked">
+            <li><a href="{{ "index.html" | relURL }}" class="button">Home</a></li>
+        </ul>
+    </div>
+</section>
+
+{{ partial "footer" . }}
+{{ end }}

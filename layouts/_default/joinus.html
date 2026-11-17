@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ $d := site.Data.joinus }}
+
+<!-- Opportunities section (content: data/joinus.yml) -->
+<section class="wrapper style1 align-left" id="opportunities">
+    <figure class="image-fit">
+        <img src="{{ $d.image | relURL }}" alt="{{ $d.title }}" style="max-width: 100%; max-height: 815px;">
+    </figure>
+    <div class="inner" style="margin-top: 0; padding-top: 0;">
+        <h1>{{ $d.title }}</h1>
+        {{ $.RenderString (dict "display" "block") $d.intro }}
+
+        {{ range $d.sections }}
+        {{ if not .hidden }}
+        <h4><strong>{{ .heading }}</strong></h4>
+        {{ $.RenderString (dict "display" "block") .text }}
+        {{ end }}
+        {{ end }}
+
+        <ul class="actions stacked">
+            <li><a href="{{ "index.html" | relURL }}" class="button">Home</a></li>
+        </ul>
+    </div>
+</section>
+
+{{ partial "footer" . }}
+{{ end }}

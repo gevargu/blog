@@ -1,0 +1,66 @@
+####################### People page (people.html) #########################
+# To add a person: copy one block (from "- name:" down to "email:"), paste it
+# where you want them to appear, and fill it in. Order here = order on the page.
+# Photos go in static/images/people/ ; "photo" is the file name only.
+# Leave email as "" to hide it.
+# Optional: photo_height: "auto" keeps the photo's own proportions instead of a 300x300 square.
+
+title: "Meet the team"
+
+members:
+  - name: "German Vargas Gutiérrez"
+    photo: "01_vargas.jpg"
+    role: "Assistant Professor"
+    bio: "I am a plant ecophysiologist interested in understanding how plants and ecosystems respond to climate change."
+    interests: "Tropical Ecology | Ecophysiology | Ecological Forecasting | Legumes"
+    email: "vargasgg@oregonstate.edu"
+
+  - name: "Dr. Justine C. Rojas"
+    photo: "05_rojas.jpeg"
+    role: "Postdoctoral Scholar"
+    bio: "I am an ecophysiologist, focusing on how climate change affects the physiological responses and ecological performance of organisms."
+    interests: "Forest Ecology | Ecophysiology | Temperate Rainforest"
+    email: "rojasjus@oregonstate.edu"
+
+  - name: "MSc. Sofía Hernández-Cortez"
+    photo: "06_sofia.jpeg"
+    role: "PhD Student"
+    bio: "I am a Colombian ecophysiologist interested in understanding how plants from different ecosystems respond to abiotic stress."
+    interests: "Plant physiology | Climate change | Ecology | Evolution"
+    email: ""
+
+  - name: "Haley Sotelo"
+    photo: "07_sotelo.jpeg"
+    role: "MSc Student"
+    bio: "I am studying forest pathology and ecophysiology. I am interested in drought tolerance and pathogen susceptibility, and the broader implications of these interactions within the context of climate change and ecosystem resilience."
+    interests: "Ecophysiology | Forest Pathology | Ecology | Environmental Science"
+    email: ""
+
+  - name: "Maddie DelaCruz"
+    photo: "08_delacruz.jpeg"
+    role: "MSc Student"
+    bio: "I am studying forest ecophysiology and am interested in investigating the relationships among water use, physiology, climate, and anthropogenic changes in different ecosystems."
+    interests: "Forest Ecology | Ecophysiology | Plant-Water Relations"
+    email: ""
+
+  - name: "Cooper Parkins"
+    photo: "03_parkins.jpg"
+    photo_height: "auto"
+    role: "Undergraduate Student"
+    bio: "I am a second-year student studying Natural Resources and Fish and Wildlife Conservation. I am interested in studying how ecosystem stressors affect plant physiology."
+    interests: "Natural Resources | Environmental Research | Fish & Wildlife Biology"
+    email: ""
+
+  - name: "Madison Crump"
+    photo: "09_crump.jpeg"
+    photo_height: "auto"
+    role: "Undergraduate Student"
+    bio: "I am a second-year undergraduate double-majoring in BioResource Research and Natural Resources with a minor in Chemistry. I am interested in how conifers modify their vascular tissue and hydraulics in the context of environmental stress."
+    interests: "Ecophysiology | Plant Hydraulics | Wood Anatomy"
+    email: ""
+
+# One line per former member, newest first.
+alumni:
+  - "Colin Pannikkat - Undergraduate research assistant in ecophysiological modeling, 2024 - 2026"
+  - "BSc. José D. Vargas-Murillo - Dry forest ecophysiology intern, 2025"
+  - "MSc. M. Afsal Athanikkal - Branching borders intern, 2025"

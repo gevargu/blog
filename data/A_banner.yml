@@ -11,10 +11,14 @@ content: |
     at <a target="_blank" href="https://oregonstate.edu">Oregon State University</a>.
   </p>
 buttons:
+  - label: "Research"
+    link: "#first"
   - label: "Publications"
     link: "./publications.html"
   - label: "People"
     link: "./people.html"
+  - label: "Join us"
+    link: "./joinus.html"
 
 style: "style5 invert color4 content-align-center fullscreen onscroll-content-fade-up"
 image: "images/banner.jpg"
