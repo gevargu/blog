@@ -15,13 +15,6 @@ members:
     interests: "Tropical Ecology | Ecophysiology | Ecological Forecasting | Legumes"
     email: "vargasgg@oregonstate.edu"
 
-  - name: "Dr. Justine C. Rojas"
-    photo: "05_rojas.jpeg"
-    role: "Postdoctoral Scholar"
-    bio: "I am an ecophysiologist, focusing on how climate change affects the physiological responses and ecological performance of organisms."
-    interests: "Forest Ecology | Ecophysiology | Temperate Rainforest"
-    email: "rojasjus@oregonstate.edu"
-
   - name: "MSc. Sofía Hernández-Cortez"
     photo: "06_sofia.jpeg"
     role: "PhD Student"
@@ -59,8 +52,17 @@ members:
     interests: "Ecophysiology | Plant Hydraulics | Wood Anatomy"
     email: ""
 
+  - name: "Willow Wolf"
+    photo: "10_wolf.jpeg"
+    photo_height: "auto"
+    role: "Undergraduate Student"
+    bio: "I am a second-year undergraduate student studying Natural Resources, Ecological Restoration, and a minor in Indigenous Studies. I am interested in how combining western and Indigenous Traditional Ecological practices can improve forest management, restoration, and future climate outcomes."
+    interests: "Forest Ecology | Ecophysiology | Forest Ecosystems | Traditional Ecological Knowledge"
+    email: ""
+
 # One line per former member, newest first.
 alumni:
+  - "Dr. Justine C. Rojas - Postdoctoral Scholar, 2025 - 2026. Now an Assistant Professor at Piedmont University"
   - "Colin Pannikkat - Undergraduate research assistant in ecophysiological modeling, 2024 - 2026"
   - "BSc. José D. Vargas-Murillo - Dry forest ecophysiology intern, 2025"
   - "MSc. M. Afsal Athanikkal - Branching borders intern, 2025"

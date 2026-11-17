@@ -4,6 +4,8 @@
 
 title: "Publications"
 image: "images/wide_banner.jpg"
+# Banner crop: which part of the photo to keep visible. "center", "top", "bottom", or a percentage like "center 30%" (0% = top, 100% = bottom).
+image_position: "center"
 scholar_link: "https://scholar.google.com/citations?user=5WwcAhMAAAAJ&hl=en"
 
 publications:

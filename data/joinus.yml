@@ -5,6 +5,8 @@
 
 title: "Join us!"
 image: "images/met_forest.jpeg"
+# Banner crop: which part of the photo to keep visible. "center", "top", "bottom", or a percentage like "center 30%" (0% = top, 100% = bottom).
+image_position: "center"
 
 intro: |
   The OSU Forest Ecophysiology Lab is dedicated to investigating the responses of forest ecosystems to climate change. Our research focuses on understanding how we can use physiological ecology to study vegetation responses to environmental stressors across different ecosystems, including tropical forests and temperate mountain systems. We employ a variety of methodologies, including conducting empirical measurements of plant ecophysiology, long-term monitoring of forest dynamics, Bayesian statistics, and process-based modeling. If this something you are interest in, do not hesitate in reaching out!
