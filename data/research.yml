@@ -1,0 +1,85 @@
+####################### Research (home page panels + one page per theme) #########################
+# Each block under "themes" makes:
+#   1. a panel on the home page (photo + title + short summary + "Learn more" button), and
+#   2. its own page at /research/<slug>/ with an intro, a list of its projects, and one section per project.
+# Order here = order on the home page.
+#
+# To add a theme (e.g. hazelnut orchards): copy a whole block (from "- slug:" down to the
+# end of its projects), paste it at the end, and give it a new slug.
+# Set hidden: true to take a theme (or a single project) off the site without deleting it.
+#
+# Photos go in static/images/research/ ; write them as "images/research/<file name>".
+# Text fields use Markdown: **bold**, *italics*, [link text](https://...), blank line = new paragraph.
+
+# Intro shown on the home page above the panels
+header:
+  title: "Ecophysiology in a Changing Planet"
+  content: |
+    Plant ecophysiology offers an exciting chance to understand how plants function and how they cope with a changing environment. We explore the mechanisms behind a plant's tolerance to environmental stress, like drought, heat, and wind. This knowledge is critical for predicting how plant communities will adapt and survive in the face of global change. Explore the links below to learn about our work.
+
+themes:
+  - slug: "global-change"                      # used in the page address; lowercase, no spaces
+    title: "Global change forest ecophysiology"
+    color: "color3"                            # panel color: color1 ... color7
+    panel_image: "images/deciduousforest.jpg"  # photo on the home page panel
+    summary: "How do physiological traits shape the resilience of forests to drought, heat, and a changing climate? We study this from tropical dry forests in Costa Rica to Douglas-fir forests in the Pacific Northwest."
+    intro: |
+      Forests are facing hotter droughts and more frequent disturbances. Our work asks how the physiology of individual trees (how they move water, regulate transpiration, and grow) scales up to determine which trees survive and how forest communities change. We combine long-term forest monitoring, field experiments, physiological measurements, and process-based models.
+    projects:
+      - id: "tropical-dry-forest"             # link straight to this project with /research/global-change/#tropical-dry-forest
+        title: "Physiological traits and tropical dry forest resilience"
+        status: "active"                       # "active" or "past". Past projects move to a "Past projects" list at the bottom of the page.
+        gallery:                               # photos and publication figures shown to the right of the text; add as many as you like
+          # - image: "images/research/my_photo.jpg"
+          #   caption: "What the picture shows. Markdown works here, e.g. *Pseudotsuga menziesii*."
+          #   link: ""                         # optional: e.g. the DOI of the paper a figure comes from (shows "Read the paper")
+          #   link_label: ""                   # optional: different text for that link, e.g. "Data on Dryad"
+        text: |
+          How does variation in physiological traits among tropical dry forest trees affect their resilience to climate change? We study how traits vary across species and as trees grow, and how that variation relates to tree growth, mortality, and the assembly of forest communities.
+        collaborators: "Chris Smith-Martin, Jennifer S. Powers, Justin Becknell, David Medvigy, Mickey O'Brien"
+        funding: "NSF DEB-LTREB 2217752"
+        links:
+          - label: "NSF award"
+            url: "https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2217752"
+
+      - id: "douglas-fir"
+        title: "Douglas-fir responses to drought and heat"
+        status: "active"
+        gallery:
+        text: |
+          How do Douglas-fir trees respond to the combined stress of drought and heat? Working in a secondary-growth Douglas-fir stand with an irrigation experiment at the HJ Andrews Experimental Forest, we study how trees regulate transpiration hydraulically and how that affects growth and tracheid production.
+        collaborators: "Chris Still, Pam Sullivan, Mark Schulze"
+        funding: ""
+        links:
+          - label: "HJ Andrews Experimental Forest"
+            url: "https://andrewsforest.oregonstate.edu/"
+
+  - slug: "drought-tolerance"
+    title: "Genetics and evolution of drought tolerance"
+    color: "color7"
+    panel_image: "images/aspen_low1.jpg"
+    summary: "Where do drought tolerance strategies come from? We look for the genes behind water use and xylem drought tolerance in black cottonwood, and trace how drought deciduousness evolved in tropical trees."
+    intro: |
+      Plants have evolved very different ways of coping with drought, from tolerating it to avoiding it altogether by dropping their leaves. We study the genetic basis of these strategies within a species, and their evolutionary history across tropical trees.
+    projects:
+      - id: "black-cottonwood"
+        title: "Genetic basis of drought tolerance in black cottonwood"
+        status: "active"
+        gallery:
+        text: |
+          What genes underlie water use efficiency and xylem drought tolerance in black cottonwood (*Populus trichocarpa*), a riparian tree of the Pacific Northwest? We phenotype hydraulic and photosynthetic traits and drought responses to identify genes associated with drought adaptation.
+        collaborators: "Posy Busby, Jared LeBoldus, Chris Still, Margaret Krause"
+        funding: ""
+        links: []
+
+      - id: "drought-deciduousness"
+        title: "Evolution of drought deciduousness in tropical trees"
+        status: "active"
+        gallery:
+        text: |
+          How did drought deciduousness, shedding leaves to survive the dry season, evolve in tropical trees? This question is part of VERDE, an NSF-funded working group.
+        collaborators: "Catherine Hulshof, Jennifer S. Powers, Loren Albert, Toby Pennington, Natalia Umaña, and others"
+        funding: "NSF (VERDE working group)"
+        links:
+          - label: "VERDE working group"
+            url: "https://cu-esiil.github.io/VERDE/"

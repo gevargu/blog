@@ -1,0 +1,20 @@
+{{/* Home page research panels, one per theme in data/research.yml. Sides alternate automatically. */}}
+{{ $i := 0 }}
+{{ range site.Data.research.themes }}
+{{ if not .hidden }}{{ $th := . }}
+{{ $side := cond (eq (mod $i 2) 0) "orient-left" "orient-right" }}
+<section class="spotlight style1 invert {{ .color | default "color3" }} {{ $side }} content-align-left image-position-center onscroll-image-fade-in">
+    <div class="content">
+        <h2>{{ .title }}</h2>
+        {{ with .summary }}<p>{{ . }}</p>{{ end }}
+        <ul class="actions stacked">
+            <li><a href="{{ printf "research/%s/" .slug | relURL }}" class="button">Learn more</a></li>
+        </ul>
+    </div>
+    {{ with .panel_image }}<div class="image">
+        <img src="{{ . | relURL }}" alt="{{ $th.title }}" />
+    </div>{{ end }}
+</section>
+{{ $i = add $i 1 }}
+{{ end }}
+{{ end }}

@@ -1,0 +1,6 @@
+{{/* Makes one page per theme in data/research.yml. Edit the yml file, not this one. */}}
+{{ range site.Data.research.themes }}
+  {{ if not .hidden }}
+    {{ $.AddPage (dict "path" .slug "title" .title "kind" "page" "params" (dict "theme" .slug)) }}
+  {{ end }}
+{{ end }}

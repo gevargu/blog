@@ -1,0 +1,180 @@
+{{ define "main" }}
+{{ $slug := .Params.theme }}
+{{ $t := index (where site.Data.research.themes "slug" $slug) 0 }}
+{{ $shown := where $t.projects "hidden" "!=" true }}
+{{ $active := where $shown "status" "!=" "past" }}
+{{ $past := where $shown "status" "past" }}
+
+<style>
+    .project { display: flex; gap: 2.5rem; align-items: flex-start; margin: 2.5rem 0; }
+    .project-body { flex: 1; min-width: 0; }
+    .project-body h3 { margin-top: 0; }
+    .project-gallery { flex: 0 0 42%; min-width: 0; }
+    .project-jump li { margin-bottom: 0.3rem; font-weight: bold; }
+    .past-project { margin-bottom: 1.75rem; }
+    .past-project h4 { margin-bottom: 0.4rem; }
+    .past-project p { margin-bottom: 0.4rem; }
+
+    /* Project gallery (photos + publication figures) */
+    :where(.pgallery) button { all: unset; box-sizing: border-box; cursor: pointer; }
+    .pgallery button:focus-visible { outline: 2px solid #3a8f5c; outline-offset: 2px; }
+    .pg-stage { position: relative; }
+    .pg-slide, .pg-cap { display: none; }
+    .pg-slide.is-active, .pg-cap.is-active { display: block; }
+    .pg-open { display: block; width: 100%; aspect-ratio: 4 / 3; background: rgba(0,0,0,0.05) !important; box-shadow: none !important; border-radius: 4px; overflow: hidden; }
+    .pg-open img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .pg-cap { font-size: 0.85em; line-height: 1.5; margin-top: 0.6rem; opacity: 0.85; }
+    .pg-cap a { white-space: nowrap; }
+    .pg-prev, .pg-next { position: absolute; top: calc(50% - 1.25rem); width: 2.5rem; height: 2.5rem; border-radius: 50%; background: rgba(0,0,0,0.5) !important; color: #fff !important; box-shadow: none !important; font-size: 1.6rem; line-height: 2.4rem; text-align: center; }
+    .pg-prev { left: 0.5rem; } .pg-next { right: 0.5rem; }
+    .pg-thumbs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .pg-thumb { width: 4rem; height: 4rem; box-shadow: none !important; background: none !important; border-radius: 4px; overflow: hidden; opacity: 0.55; outline: 2px solid transparent; }
+    .pg-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .pg-thumb.is-active, .pg-thumb:hover { opacity: 1; outline-color: #3a8f5c; }
+
+    /* Full-screen viewer */
+    .pg-viewer { position: fixed; inset: 0; z-index: 100000; background: rgba(0,0,0,0.92); display: none; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; }
+    .pg-viewer.is-open { display: flex; }
+    .pg-viewer img { max-width: 94vw; max-height: 80vh; object-fit: contain; }
+    .pg-viewer .pg-vcap { color: #eee; max-width: 900px; text-align: center; margin-top: 1rem; font-size: 0.95em; line-height: 1.5; }
+    .pg-viewer .pg-vcap a { color: #9fd8b4; }
+    :where(.pg-viewer) button { all: unset; cursor: pointer; color: #fff !important; box-shadow: none !important; background: none !important; position: absolute; font-size: 2.2rem; line-height: 1; padding: 0.5rem 0.9rem; }
+    .pg-viewer .pg-vclose { top: 0.5rem; right: 0.75rem; }
+    .pg-viewer .pg-vprev { left: 0.5rem; top: 50%; } .pg-viewer .pg-vnext { right: 0.5rem; top: 50%; }
+
+    @media screen and (max-width: 736px) {
+        .project { flex-direction: column; gap: 1.25rem; }
+        .project-gallery { flex-basis: auto; width: 100%; }
+    }
+</style>
+
+<!-- Research theme page (content: data/research.yml) -->
+<section class="wrapper style1 align-left" id="research-{{ $slug }}">
+    <div class="inner">
+        <h1>{{ $t.title }}</h1>
+        {{ with $t.intro }}{{ $.RenderString (dict "display" "block") . }}{{ end }}
+
+        {{ if or $active $past }}
+        <h4>Projects</h4>
+        <ul class="project-jump">
+            {{ range $active }}<li><a href="#{{ .id }}">{{ .title }}</a></li>{{ end }}
+            {{ if $past }}<li><a href="#past-projects">Past projects</a></li>{{ end }}
+        </ul>
+        {{ end }}
+
+        {{ range $active }}
+        <hr>
+        <div class="project" id="{{ .id }}">
+            <div class="project-body">
+                <h3><strong>{{ .title }}</strong></h3>
+                {{ with .text }}{{ $.RenderString (dict "display" "block") . }}{{ end }}
+                {{ with .funding }}<p><strong>Funding:</strong> {{ . }}</p>{{ end }}
+                {{ with .collaborators }}<p><strong>Collaborators:</strong> {{ . }}</p>{{ end }}
+                {{ with .links }}<ul class="actions">
+                    {{ range . }}<li><a href="{{ .url }}" target="_blank" class="button small">{{ .label }}</a></li>{{ end }}
+                </ul>{{ end }}
+            </div>
+            {{ with .gallery }}
+            {{ $n := len . }}
+            <div class="project-gallery pgallery">
+                <div class="pg-stage">
+                    {{ range $i, $g := . }}
+                    <div class="pg-slide{{ if eq $i 0 }} is-active{{ end }}"><button type="button" class="pg-open" aria-label="View larger"><img src="{{ $g.image | relURL }}" alt="{{ $g.caption | default "" | markdownify | plainify }}"{{ if $i }} loading="lazy"{{ end }}></button></div>
+                    {{ end }}
+                    {{ if gt $n 1 }}
+                    <button type="button" class="pg-prev" aria-label="Previous picture">‹</button>
+                    <button type="button" class="pg-next" aria-label="Next picture">›</button>
+                    {{ end }}
+                </div>
+                {{ if gt $n 1 }}
+                <div class="pg-thumbs">
+                    {{ range $i, $g := . }}<button type="button" class="pg-thumb{{ if eq $i 0 }} is-active{{ end }}" aria-label="Picture {{ add $i 1 }}"><img src="{{ $g.image | relURL }}" alt="" loading="lazy"></button>{{ end }}
+                </div>
+                {{ end }}
+                {{ range $i, $g := . }}<div class="pg-cap{{ if eq $i 0 }} is-active{{ end }}">{{ with $g.caption }}{{ . | markdownify }}{{ end }}{{ with $g.link }} <a href="{{ . }}" target="_blank">{{ $g.link_label | default "Read the paper" }}&nbsp;→</a>{{ end }}</div>{{ end }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ with $past }}
+        <hr>
+        <h2 id="past-projects">Past projects</h2>
+        {{ range . }}
+        <div class="past-project" id="{{ .id }}">
+            <h4>{{ .title }}</h4>
+            {{ with .text }}{{ $.RenderString (dict "display" "block") . }}{{ end }}
+            {{ with .funding }}<p><strong>Funding:</strong> {{ . }}</p>{{ end }}
+            {{ with .collaborators }}<p><strong>Collaborators:</strong> {{ . }}</p>{{ end }}
+            {{ with .links }}<p>{{ range $i, $l := . }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}" target="_blank">{{ $l.label }}</a>{{ end }}</p>{{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <hr>
+        <ul class="actions">
+            <li><a href="{{ "index.html#first" | relURL }}" class="button">Back to research</a></li>
+            <li><a href="{{ "index.html" | relURL }}" class="button">Home</a></li>
+        </ul>
+    </div>
+</section>
+
+<div class="pg-viewer" role="dialog" aria-modal="true" aria-label="Picture viewer" tabindex="-1">
+    <button type="button" class="pg-vclose" aria-label="Close">×</button>
+    <button type="button" class="pg-vprev" aria-label="Previous picture">‹</button>
+    <img src="" alt="">
+    <div class="pg-vcap"></div>
+    <button type="button" class="pg-vnext" aria-label="Next picture">›</button>
+</div>
+
+<script>
+(function () {
+    var viewer = document.querySelector('.pg-viewer');
+    var vImg = viewer.querySelector('img'), vCap = viewer.querySelector('.pg-vcap');
+    var current = null; // gallery currently shown in the viewer
+
+    function show(g, i) {
+        var slides = g.querySelectorAll('.pg-slide'), thumbs = g.querySelectorAll('.pg-thumb'), caps = g.querySelectorAll('.pg-cap');
+        i = (i + slides.length) % slides.length;
+        slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+        thumbs.forEach(function (t, k) { t.classList.toggle('is-active', k === i); });
+        caps.forEach(function (c, k) { c.classList.toggle('is-active', k === i); });
+        g._index = i;
+        if (current === g) fillViewer(g);
+    }
+    function fillViewer(g) {
+        var s = g.querySelectorAll('.pg-slide')[g._index || 0];
+        var img = s.querySelector('img'), cap = g.querySelectorAll('.pg-cap')[g._index || 0];
+        vImg.src = img.currentSrc || img.src; vImg.alt = img.alt;
+        vCap.innerHTML = cap ? cap.innerHTML : '';
+        var many = g.querySelectorAll('.pg-slide').length > 1;
+        viewer.querySelector('.pg-vprev').style.display = many ? '' : 'none';
+        viewer.querySelector('.pg-vnext').style.display = many ? '' : 'none';
+    }
+    function open(g) { current = g; fillViewer(g); viewer.classList.add('is-open'); viewer.focus(); }
+    function close() { viewer.classList.remove('is-open'); vImg.src = ''; current = null; }
+
+    document.querySelectorAll('.pgallery').forEach(function (g) {
+        g._index = 0;
+        g.querySelectorAll('.pg-thumb').forEach(function (t, k) { t.addEventListener('click', function () { show(g, k); }); });
+        var p = g.querySelector('.pg-prev'), n = g.querySelector('.pg-next');
+        if (p) p.addEventListener('click', function () { show(g, g._index - 1); });
+        if (n) n.addEventListener('click', function () { show(g, g._index + 1); });
+        g.querySelectorAll('.pg-open').forEach(function (b) { b.addEventListener('click', function () { open(g); }); });
+    });
+
+    viewer.querySelector('.pg-vclose').addEventListener('click', close);
+    viewer.querySelector('.pg-vprev').addEventListener('click', function (e) { e.stopPropagation(); show(current, current._index - 1); });
+    viewer.querySelector('.pg-vnext').addEventListener('click', function (e) { e.stopPropagation(); show(current, current._index + 1); });
+    viewer.addEventListener('click', function (e) { if (e.target === viewer) close(); });
+    document.addEventListener('keydown', function (e) {
+        if (!current) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') show(current, current._index - 1);
+        else if (e.key === 'ArrowRight') show(current, current._index + 1);
+    });
+})();
+</script>
+
+{{ partial "footer" . }}
+{{ end }}

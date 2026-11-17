@@ -1,19 +1,63 @@
 ####################### Publications page (publications.html) #########################
-# To add a paper: copy one block (from "- authors:" down to "link:") and paste it at the top of the list.
+# To add a paper: copy one block (from "- authors:" down to "link:") and paste it at the top of the list (newest first).
+# "link" is the full DOI address (https://doi.org/...); it is shown on the page after the journal.
 # authors can use <strong>...</strong> to bold a name. journal can use <i>...</i> for italics.
 
 title: "Publications"
 image: "images/wide_banner.jpg"
 # Banner crop: which part of the photo to keep visible. "center", "top", "bottom", or a percentage like "center 30%" (0% = top, 100% = bottom).
 image_position: "center"
-scholar_link: "https://scholar.google.com/citations?user=5WwcAhMAAAAJ&hl=en"
+# Line shown under the title. Markdown link format: [text](address). Delete the line (or leave "") to hide it.
+scholar_text: "Also on [**Google Scholar**](https://scholar.google.com/citations?user=5WwcAhMAAAAJ&hl=en)."
 
 publications:
-  - authors: "Terry, Caitlin N., P. Ortiz-Colín, J. S. Powers, <strong>Vargas G., G.</strong>, A. Guadamúz, and C. M. Hulshof"
+  - authors: "Fox, G. O., L. R. Schimleck, <strong>G. Vargas G.</strong>, D. Smith, K. A. McCulloh, and R. Evans"
+    year: 2026
+    title: "Branch hydraulics and tracheid dimensions of Pacific yew"
+    journal: "IAWA Journal 47(4): 484-497."
+    link: "https://doi.org/10.1163/22941932-bja10222"
+
+  - authors: "Terry, C. N., P. Ortiz-Colín, J. S. Powers, <strong>G. Vargas G.</strong>, A. Guadamúz, and C. M. Hulshof"
     year: 2026
     title: "Forest type and leaf habit mediate thermal and drought tolerance across a tropical elevational gradient"
     journal: "Functional Ecology 40(6): 1933-1945."
-    link: " https://doi.org/10.1111/1365-2435.70328"
+    link: "https://doi.org/10.1111/1365-2435.70328"
+
+  - authors: "Powers, J. S., F. Powers-Tiffin, P. Choksi, F. Fleischman, <strong>G. Vargas G.</strong>, J. M. Becknell, C. Hulshof, M. J. O'Brien, D. Pérez-Aviles, D. Pereira-Arias, N. B. Schwartz, C. Smith-Martin, and D. Medvigy"
+    year: 2026
+    title: "Trees inside and outside of forests in Guanacaste, Costa Rica: Comparisons among conservation areas, fencerows, and urban parks"
+    journal: "Biotropica 58(2): e70186."
+    link: "https://doi.org/10.1111/btp.70186"
+
+  - authors: "Anderegg, W. R. L., A. T. Trugman, <strong>G. Vargas G.</strong>, C. Wu, and L. Yang"
+    year: 2025
+    title: "Current forest carbon offset buffer pool contributions do not adequately insure against disturbance-driven carbon losses"
+    journal: "Global Change Biology 31(6): e70251."
+    link: "https://doi.org/10.1111/gcb.70251"
+
+  - authors: "Fickle, J. C., <strong>G. Vargas G.</strong>, and W. R. L. Anderegg"
+    year: 2025
+    title: "Ring-specific vulnerability to embolism reveals accumulation of damage in the xylem"
+    journal: "New Phytologist 246(5): 2046-2058."
+    link: "https://doi.org/10.1111/nph.70137"
+
+  - authors: "Allerton, T. A. P., S. J. Van Bloem, and <strong>G. Vargas G.</strong>"
+    year: 2025
+    title: "Fast-risky versus slow-safe life histories mediate resprouting among Caribbean tropical dry forest trees"
+    journal: "Functional Ecology 39(6): 1579-1593."
+    link: "https://doi.org/10.1111/1365-2435.70041"
+
+  - authors: "Trugman, A. T., B. Morgan, and <strong>G. Vargas G.</strong>"
+    year: 2025
+    title: "The impacts of compounding droughts: scaling from stomatal responses to ecosystem dynamics"
+    journal: "Tree Physiology 45(1): tpae172."
+    link: "https://doi.org/10.1093/treephys/tpae172"
+
+  - authors: "Liu, M., J. Peñuelas, A. T. Trugman, <strong>G. Vargas G.</strong>, L. Yang, and W. R. L. Anderegg"
+    year: 2025
+    title: "Diverging responses of terrestrial ecosystems to water stress after disturbances"
+    journal: "Nature Climate Change 15(1): 73-79."
+    link: "https://doi.org/10.1038/s41558-024-02191-z"
 
   - authors: "<strong>Vargas G., G.</strong>, H. Marcano-Vega, T. Ruzycki, T. Wood, W. R. L. Anderegg, J. S. Powers, and E. Helmer"
     year: 2025
@@ -21,13 +65,13 @@ publications:
     journal: "Journal of Ecology 113(1): 53-67."
     link: "https://doi.org/10.1111/1365-2745.14437"
 
-  - authors: "Mass, B., C. Cardelus, F. Carrasco Rueda, Y. Chirango, V. Gowda, F. Montaño-Centellas, R. Ostertag, A. Roopsing, <strong>G. Vargas</strong>, B. G. Yadok, and L. Santiago"
-    year: 2024
+  - authors: "Maas, B., C. Cardelus, F. Carrasco-Rueda, Y. Chirango, V. Gowda, F. Montaño-Centellas, R. Ostertag, A. Roopsind, <strong>G. Vargas G.</strong>, B. G. Yadok, and L. Santiago"
+    year: 2025
     title: "Supporting inclusive scientific communities: Insights from the ATBC society survey"
-    journal: "Biotropica: <i>in press</i>."
+    journal: "Biotropica 57(1): e13378."
     link: "https://doi.org/10.1111/btp.13378"
 
-  - authors: "Wang, Y., D. Yang, <strong>Vargas G.</strong>, G. Hao, J. S. Powers, Y. Ke, Q. Wang, Y. Zhang, and J. Zhang"
+  - authors: "Wang, Y., D. Yang, <strong>G. Vargas G.</strong>, G. Hao, J. S. Powers, Y. Ke, Q. Wang, Y. Zhang, and J. Zhang"
     year: 2024
     title: "Leaf habit differentiation explains trait tradeoffs across savanna woody plants"
     journal: "Forest Ecosystems 11: 100190."
@@ -57,11 +101,11 @@ publications:
     journal: "New Phytologist 237(3): 766-779."
     link: "https://doi.org/10.1111/nph.18612"
 
-  - authors: "<strong>Vargas G., G.</strong>, N. Kunert, W. M. Hammond, Z. C. Berry, L. K. Werden, C. Smith-Martin, B. Wolfe, L. Toro, A. Mondragón-Botero, J. Pinto-Ledezma, N. B. Schwartz, M. Uriarte, L. Sack, K. Anderson-Texeira and J. S. Powers"
+  - authors: "<strong>Vargas G., G.</strong>, N. Kunert, W. M. Hammond, Z. C. Berry, L. K. Werden, C. Smith-Martin, B. Wolfe, L. Toro, A. Mondragón-Botero, J. Pinto-Ledezma, N. B. Schwartz, M. Uriarte, L. Sack, K. Anderson-Teixeira and J. S. Powers"
     year: 2022
     title: "Leaf habit affects the distribution of drought sensitivity but not water transport efficiency in the tropics"
     journal: "Ecology Letters 25: 2637-2650."
-    link: "https://doi.org/10.1111/ELE.14128"
+    link: "https://doi.org/10.1111/ele.14128"
 
   - authors: "Becknell, J. M., <strong>G. Vargas G.</strong>, L. A. Wright, N.-F. Woods, D. Medvigy and J. S. Powers"
     year: 2022
@@ -85,7 +129,7 @@ publications:
     year: 2022
     title: "Reduced ecosystem resilience quantifies fine-scale heterogeneity in tropical forest mortality responses to drought"
     journal: "Global Change Biology 28: 2081-2094."
-    link: "http://doi.org/10.1111/gcb.16046"
+    link: "https://doi.org/10.1111/gcb.16046"
 
   - authors: "Powers, J. S., A. Mondragón-Botero, N. Norden, B. Salgado-Negret, C. Pizano, R. González-M and <strong>G. Vargas G.</strong>"
     year: 2022
@@ -97,22 +141,46 @@ publications:
     year: 2021
     title: "Beyond leaf habit: generalities in plant function across 97 tropical dry forest tree species"
     journal: "New Phytologist 232: 148-161."
-    link: "//doi.org/10.1111/nph.17584"
+    link: "https://doi.org/10.1111/nph.17584"
 
   - authors: "Becknell, J., <strong>G. Vargas G.</strong>, D. Perez-Aviles, D. Medvigy and J. S. Powers"
     year: 2021
     title: "Above-ground net primary productivity in regenerating seasonally dry tropical forest: Contributions of rainfall, forest age and soil"
     journal: "Journal of Ecology 109: 3903-3915."
-    link: "//doi.org/10.1111/1365-2745.13767"
+    link: "https://doi.org/10.1111/1365-2745.13767"
 
   - authors: "Waring, B., M. De Guzman, D. Du, J. M. Dupuy, M. Gei, J. Gutknecht, C. M. Hulshof, N. Jelinski, A. Margenot, D. Medvigy, C. Pizano, B. Salgado-Negret, N. B. Schwartz, A. Trierweiler, S. Van Bloem, <strong>G. Vargas G.</strong>, and J. S. Powers"
     year: 2021
     title: "Soil biogeochemistry across Central and South American tropical dry forests"
     journal: "Ecological Monographs 91(3): e01453."
-    link: "//doi.org/10.1002/ecm.1453"
+    link: "https://doi.org/10.1002/ecm.1453"
 
   - authors: "Powers, J. S., <strong>G. Vargas G.</strong>, T. J. Brodribb, N. B. Schwartz, D. Perez-Aviles, C. M. Smith-Martin, J. M. Becknell, F. Aureli, R. Blanco, E. Calderon-Morales, J. C. Calvo-Alvarado, A. J. Calvo-Obando, M. M. Chavarria, D. Carvajal-Vanegas, C. D. Jimenez-Rodriguez, E. M. Chacon, C. M. Schaffner, L. K. Werden, X. Xu, and D. Medvigy"
     year: 2020
     title: "A catastrophic tropical drought kills hydraulically vulnerable tree species"
     journal: "Global Change Biology 26(5): 3122-3133."
     link: "https://doi.org/10.1111/gcb.15037"
+
+  - authors: "Kandlikar, G. S., M. C. Vaz, R. Kriebel, <strong>G. Vargas G.</strong>, F. A. Michelangeli, R. Cordero, F. Almeda, G. Avalos, N. Fetcher, and N. J. B. Kraft"
+    year: 2018
+    title: "Contrasting patterns of taxonomic, phylogenetic and functional variation along a Costa Rican altitudinal gradient in the plant family Melastomataceae"
+    journal: "Journal of Tropical Ecology 34(3): 204-208."
+    link: "https://doi.org/10.1017/S0266467418000172"
+
+  - authors: "<strong>Vargas G., G.</strong>, L. K. Werden, and J. S. Powers"
+    year: 2015
+    title: "Explaining legume success in tropical dry forests based on seed germination niches: A new hypothesis"
+    journal: "Biotropica 47(3): 277-280."
+    link: "https://doi.org/10.1111/btp.12210"
+
+  - authors: "<strong>Vargas G., G.</strong>, and J. E. Hidalgo-Mora"
+    year: 2013
+    title: "Sucesión de un bosque tropical seco en la Isla San Lucas, Puntarenas, Costa Rica"
+    journal: "Cuadernos de Investigación UNED 5(2): 261-269."
+    link: "https://doi.org/10.22458/urj.v5i2.280"
+
+  - authors: "<strong>Vargas G., G.</strong>, and R. A. Cordero S."
+    year: 2013
+    title: "Photosynthetic responses to temperature of two tropical rainforest tree species from Costa Rica"
+    journal: "Trees 27(5): 1261-1270."
+    link: "https://doi.org/10.1007/s00468-013-0874-0"

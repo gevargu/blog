@@ -1,11 +1,8 @@
 {{ define "main" }}
 
 	{{ partial "A_banner" site.Data.A_banner }}
-	{{ partial "research_header" site.Data.research_header }}
-	{{ partial "spotlight" site.Data.spotlight4 }}
-	{{ partial "spotlight" site.Data.spotlight1 }}
-	{{ partial "spotlight" site.Data.spotlight2 }}
-	<!-- {{ partial "spotlight" site.Data.spotlight3 }} -->
+	{{ partial "research_header" (merge site.Data.research.header (dict "id" "first")) }}
+	{{ partial "research_panels" . }}
 	{{ partial "gallery" site.Data.gallery }}
 	<!-- {{ partial "items" site.Data.items }} -->
 <!-- 	{{ partial "elements" . }}
