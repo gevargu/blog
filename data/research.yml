@@ -55,12 +55,12 @@ themes:
             url: "https://andrewsforest.oregonstate.edu/"
 
   - slug: "drought-tolerance"
-    title: "Genetics and evolution of drought tolerance"
+    title: "Genetics and evolution of abiotic stress tolerance"
     color: "color7"
     panel_image: "images/aspen_low1.jpg"
     summary: "Where do drought tolerance strategies come from? We look for the genes behind water use and xylem drought tolerance in black cottonwood, and trace how drought deciduousness evolved in tropical trees."
     intro: |
-      Plants have evolved very different ways of coping with drought, from tolerating it to avoiding it altogether by dropping their leaves. We study the genetic basis of these strategies within a species, and their evolutionary history across tropical trees.
+      Plants have evolved very different ways of coping with drought and heat, from tolerating it to avoiding it altogether by dropping their leaves. We study the genetic basis of these strategies within a species, and their evolutionary history across tropical trees.
     projects:
       - id: "black-cottonwood"
         title: "Genetic basis of drought tolerance in black cottonwood"
